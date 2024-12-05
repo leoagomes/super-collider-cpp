@@ -7,16 +7,10 @@ include(FetchContent)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Dependencies
-set(RAYLIB_VERSION 5.0)
-
-FetchContent_Declare(
-    raylib
-    DOWNLOAD_EXTRACT_TIMESTAMP OFF
-    URL https://github.com/raysan5/raylib/archive/refs/tags/${RAYLIB_VERSION}.tar.gz
-    FIND_PACKAGE_ARGS
-)
-
-FetchContent_MakeAvailable(raylib)
+set(RAYLIB_VERSION 5.5)
+add_subdirectory(${CMAKE_SOURCE_DIR}/deps/raylib)
+add_subdirectory(${CMAKE_SOURCE_DIR}/deps/raylib-cpp)
+add_subdirectory(${CMAKE_SOURCE_DIR}/deps/entt)
 
 # Our Project
 add_executable(${PROJECT_NAME})
@@ -45,6 +39,8 @@ endif()
 
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} raylib)
+target_link_libraries(${PROJECT_NAME} raylib_cpp)
+target_link_libraries(${PROJECT_NAME} EnTT)
 
 # Web Configurations
 if ("${PLATFORM}" STREQUAL "Web")
