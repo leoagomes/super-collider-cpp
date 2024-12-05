@@ -1,0 +1,9 @@
+[submodule "deps/entt"]
+	path = deps/entt
+	url = https://github.com/skypjack/entt.git
+[submodule "deps/raylib"]
+	path = deps/raylib
+	url = https://github.com/raysan5/raylib.git
+[submodule "deps/raylib-cpp"]
+	path = deps/raylib-cpp
+	url = https://github.com/RobLoach/raylib-cpp.git
