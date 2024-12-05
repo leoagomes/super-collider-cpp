@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24...3.30)
-project(raylib-game-template)
+project(super-collider)
 
 include(FetchContent)
 
@@ -21,6 +21,8 @@ FetchContent_MakeAvailable(raylib)
 # Our Project
 add_executable(${PROJECT_NAME})
 add_subdirectory(src)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 20)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME})
